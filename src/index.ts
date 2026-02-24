@@ -58,7 +58,7 @@ const AskAboutYoutubeVideoInputSchema = z.object({
 // --- 3c. Input Schema for extract_key_moments ---
 const ExtractKeyMomentsInputSchema = z.object({
   youtube_url: z.string().url({ message: "Invalid YouTube URL provided." }),
-  number_of_moments: z.number().int().positive().optional().default(3).describe("Number of key moments to extract (default: 3)."),
+  number_of_moments: z.number().int().min(1).optional().default(3).describe("Number of key moments to extract (default: 3)."),
 });
 
 
